@@ -2,14 +2,7 @@
 /plugin/;
 
 / {
-    fragment@0 {
-        ttarget-path = "/";
-        __overlay__ {
-            status = "okay";
-        };
-    };
-
-    fragment@1 {
+    fragment@0  {
         target-path = "/";
         __overlay__ {
             zephyr {
