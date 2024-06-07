@@ -73,39 +73,26 @@
         };
     };
     displays {
-        compatible = "ssd1306";
-        label = "SSD1306";
-        width = <128>;
-        height = <32>;
-        i2c = &i2c0;
-        address = <0x3C>;
+        compatible = "zmk,displays";
 
-        oled {
-            name = "main_oled";
-            rotation = <180>;
-            position = "left";
-            primary = true;
-            layers {
-                default {
-                    name = "Base";
-                    text = "Layer 0";
-                };
-                lower {
-                    name = "Lower";
-                    text = "Layer 1";
-                };
-                raise {
-                    name = "Raise";
-                    text = "Layer 2";
-                };
-            };
+        display1 {
+            label = "Display1";
+            width = <128>;
+            height = <32>;
+            i2c = &i2c0;
+            address = <0x3C>;
 
-            status {
-                caps_lock {
-                    label = "Caps";
-                    position = "right";
-                };
-            };
+            // Configuración específica del primer display
+        };
+
+        display2 {
+            label = "Display2";
+            width = <128>;
+            height = <32>;
+            i2c = &i2c1;
+            address = <0x3D>;
+
+            // Configuración específica del segundo display
         };
     };
 };
