@@ -1,15 +1,30 @@
-&i2c0 {
-    status = "okay";
-    ssd1306_0: ssd1306@3C {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3C>;
-        label = "SSD1306";
-        width = <128>;
-        height = <32>;
+/dts-v1/;
+/plugin/;
+
+/ {
+    fragment@0 {
+        target = <&i2c0>;
+        __overlay__ {
+            status = "okay";
+        };
+    };
+
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            zephyr {
+                compatible = "zephyr,display";
+                label = "ssd1306";
+                status = "okay";
+                spi-max-frequency = <1000000>;
+                width = <128>;
+                height = <32>;
+                rotation = <0>;
+                controller = <&oled_controller>;
+                dc-gpios = <&gpio1 10 0>;
+                reset-gpios = <&gpio1 11 0>;
+            };
+        };
     };
 };
 
-&zephyr_display {
-    status = "okay";
-    label = "SSD1306";
-};
