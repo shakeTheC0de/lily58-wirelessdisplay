@@ -72,4 +72,41 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
+    displays {
+        compatible = "ssd1306";
+        label = "SSD1306";
+        width = <128>;
+        height = <32>;
+        i2c = &i2c0;
+        address = <0x3C>;
+
+        oled {
+            name = "main_oled";
+            rotation = <180>;
+            position = "left";
+            primary = true;
+            layers {
+                default {
+                    name = "Base";
+                    text = "Layer 0";
+                };
+                lower {
+                    name = "Lower";
+                    text = "Layer 1";
+                };
+                raise {
+                    name = "Raise";
+                    text = "Layer 2";
+                };
+            };
+
+            status {
+                caps_lock {
+                    label = "Caps";
+                    position = "right";
+                };
+            };
+        };
+    };
 };
+
