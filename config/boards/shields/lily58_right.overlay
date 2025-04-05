@@ -1,0 +1,14 @@
+&i2c1 {
+      status = "okay";
+
+      oled_right: ssd1306@3c {
+          compatible = "solomon,ssd1306fb";
+          reg = <0x3C>;
+          width = <128>;
+          height = <32>;
+          segment-offset = <0>;
+          page-offset = <0>;
+          rotation = <0>;
+      };
+};
+
