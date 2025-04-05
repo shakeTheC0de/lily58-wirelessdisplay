@@ -1,0 +1,17 @@
+config ZMK_DISPLAY
+    bool "Enable display support"
+    default y
+    help
+      Enable support for OLED and other displays.
+
+config ZMK_SPLIT
+    bool "Enable split keyboard support"
+    default y
+    help
+      Enables support for split keyboards, like Lily58 or Corne.
+
+config OLED_DRIVER
+    bool "Enable OLED display"
+    default y
+    help
+      Enables support for OLED displays for the Lily58.
